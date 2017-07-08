@@ -292,8 +292,8 @@ contains
     if(present(verbose)) warns = verbose
     src_is_modulo = .true. 
     if (present(src_modulo)) src_is_modulo = src_modulo
-    use_new_search = .false.
-    if (present(new_search)) use_new_search = new_search
+    use_new_search = .true.
+    ! if (present(new_search)) use_new_search = new_search
     no_crash = .false.
     if(present(no_crash_when_not_found)) no_crash = no_crash_when_not_found
 
@@ -323,6 +323,7 @@ contains
        call find_neighbor_new(Interp, lon_in, lat_in, lon_out, lat_out, src_is_modulo, no_crash)
     else
        epsln2 = epsln
+       print *,'modulo=',src_is_modulo
        call find_neighbor(Interp, lon_in, lat_in, lon_out, lat_out, src_is_modulo)
     endif
 

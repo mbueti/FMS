@@ -332,8 +332,8 @@ contains
     !-----------------------------------------------------------------------
     call horiz_interp_init
 
-    method = 'conservative'
-    if(present(interp_method)) method = interp_method
+    method = 'spherical'
+    ! if(present(interp_method)) method = interp_method
 
     select case (trim(method))
     case ("conservative")
@@ -573,8 +573,8 @@ contains
 !-----------------------------------------------------------------------
    call horiz_interp_init
 
-   method = 'bilinear'
-   if(present(interp_method)) method = interp_method
+   method = 'spherical'
+   !if(present(interp_method)) method = interp_method
 
    select case (trim(method))
    case ("conservative")
